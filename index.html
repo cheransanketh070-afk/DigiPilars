@@ -3,65 +3,276 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
-  <meta name="theme-color" content="#050608" />
-  <meta name="description" content="Digital Pillars — performance marketing, social presence, web experiences and growth consulting, built as one connected system." />
-  <title>Digital Pillars — Growth, engineered.</title>
+  <meta name="theme-color" content="#03050a" />
+  <meta name="description" content="Digital Pillars — a cinematic growth systems studio for paid social, social presence, web experiences and strategy." />
+  <title>Digital Pillars — Systems for digital growth.</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles-2.css" />
 </head>
 <body>
-  <div class="noise" aria-hidden="true"></div><div class="cursor-glow" aria-hidden="true"></div><div class="progress" aria-hidden="true"><span></span></div>
-  <header class="nav">
-    <a class="brand" href="#top" aria-label="Digital Pillars home">DIGITAL PILLARS<span>.</span></a>
-    <nav class="nav-links" aria-label="Primary navigation"><a href="#system">System</a><a href="#services">Services</a><a href="#proof">Proof</a><a href="#contact">Contact</a></nav>
-    <a class="nav-cta magnetic" href="#contact">Start a build <span>↗</span></a><button class="menu" type="button" aria-expanded="false" aria-controls="mobileNav">Menu</button>
+  <div class="scene-noise" aria-hidden="true"></div>
+  <div class="cursor-orb" aria-hidden="true"></div>
+  <div class="scroll-progress" aria-hidden="true"><span></span></div>
+
+  <header class="command-bar glass-ui">
+    <a class="brand-lockup" href="#top" aria-label="Digital Pillars home">
+      <span class="brand-mark"><i></i><i></i><i></i></span>
+      <span>Digital Pillars</span>
+    </a>
+    <nav class="desktop-nav" aria-label="Primary navigation">
+      <a href="#system">System</a><a href="#pillars">Pillars</a><a href="#proof">Signals</a><a href="#contact">Contact</a>
+    </nav>
+    <a class="command-cta magnetic" href="#contact">Start a system <span>↗</span></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobileNav">Menu</button>
   </header>
-  <nav id="mobileNav" class="mobile-nav" aria-label="Mobile navigation" hidden><a href="#system">System</a><a href="#services">Services</a><a href="#proof">Proof</a><a href="#contact">Contact</a></nav>
+  <nav id="mobileNav" class="mobile-command glass-ui" hidden>
+    <a href="#system">System</a><a href="#pillars">Pillars</a><a href="#proof">Signals</a><a href="#contact">Contact</a>
+  </nav>
+
+  <div class="webgl-stage" aria-hidden="true">
+    <video class="hero-fallback" autoplay muted loop playsinline preload="metadata" src="assets/hero-cinematic.mp4" aria-hidden="true"></video>
+    <canvas id="hero3d"></canvas>
+    <div class="stage-glow"></div>
+    <div class="stage-vignette"></div>
+    <div class="stage-grid"></div>
+  </div>
+
   <main id="top">
-    <section class="hero section-dark">
-<canvas id="hero3d" aria-hidden="true"></canvas><div class="hero-vignette" aria-hidden="true"></div><div class="hero-grid" aria-hidden="true"></div>
-      <div class="hero-copy reveal"><p class="eyebrow">Independent growth studio · 2026</p><h1>Growth,<br><em>engineered.</em></h1><p class="hero-lede">Digital Pillars builds the paid, social, web and strategic systems that make a brand feel inevitable — not assembled.</p><div class="hero-actions"><a class="button magnetic" href="#services">Explore the system <span>↓</span></a><a class="text-link" href="#contact">Tell us what you're building <span>↗</span></a></div></div>
-      <div class="hero-card card card-a"><div class="card-top"><span>LIVE / PERFORMANCE</span><b>+38.4%</b></div><div class="spark"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="card-foot"><span>ROAS</span><strong>4.82×</strong><span>↗ 0.61</span></div></div>
-      <div class="hero-card card card-b"><div class="card-top"><span>SIGNAL / SOCIAL</span><span class="live-dot">LIVE</span></div><div class="big-stat">72<span>%</span></div><div class="meter"><i></i></div><div class="card-foot"><span>ATTENTION INDEX</span><span>+12.8</span></div></div>
-      <div class="hero-card card card-c"><div class="card-top"><span>BUILD / WEB</span><span>01</span></div><div class="wire"><i></i><i></i><i></i><i></i><i></i></div><div class="card-foot"><span>CORE WEB VITALS</span><strong>PASS</strong></div></div>
-      <div class="scroll-cue"><span>Scroll to enter</span><i></i></div>
+    <section class="scene-section hero-section" data-mode="core">
+      <div class="section-inner">
+        <div class="ui-panel hero-panel reveal">
+          <div class="panel-kicker"><span>DP / 01</span><span class="live-chip"><i></i> SYSTEM ONLINE</span></div>
+          <div class="hero-title-wrap">
+            <span class="object-label">DIGITAL GROWTH SYSTEM</span>
+            <h1>Growth<br><em>engineered.</em></h1>
+          </div>
+          <p>Paid media, social, web and strategy assembled as one responsive machine — designed to move with the business.</p>
+          <div class="hero-actions">
+            <a class="solid-button magnetic" href="#pillars">Enter the system <span>↘</span></a>
+            <a class="ghost-button" href="#contact">Transmit a brief <span>↗</span></a>
+          </div>
+          <div class="panel-foot"><span>ARCHITECTURE / CREATIVE / DISTRIBUTION</span><span>v.06</span></div>
+        </div>
+
+        <div class="floating-ui performance-card tilt-card reveal" data-depth=".3">
+          <div class="mini-head"><span>PERFORMANCE</span><span>LIVE</span></div>
+          <div class="metric-xl">4.82<span>×</span></div>
+          <div class="sparkline"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <div class="mini-foot"><span>ROAS</span><strong>+38.4%</strong></div>
+        </div>
+
+        <div class="floating-ui signal-card tilt-card reveal" data-depth=".5">
+          <div class="mini-head"><span>SIGNAL / SOCIAL</span><b>72%</b></div>
+          <div class="dial"><span>ATTENTION</span><strong>72</strong></div>
+          <div class="meter"><i></i></div>
+          <div class="mini-foot"><span>VELOCITY</span><strong>+12.8</strong></div>
+        </div>
+
+        <div class="floating-ui status-card tilt-card reveal" data-depth=".18">
+          <div class="mini-head"><span>CORE STATUS</span><span>06:42:18</span></div>
+          <div class="status-grid"><span>CREATIVE</span><b>READY</b><span>TRACKING</span><b>SYNCED</b><span>WEB</span><b>LIVE</b></div>
+        </div>
+
+        <div class="floating-ui ai-teaser reveal">
+          <div class="ai-icon"><span></span></div>
+          <div><small>DP / ASSIST</small><strong>Choose a module to inspect</strong></div>
+          <button type="button" id="aiTeaser" aria-label="Open Digital Pillars assistant">↗</button>
+        </div>
+      </div>
+      <div class="scroll-prompt"><span>SCROLL TO ROTATE</span><i></i></div>
     </section>
-    <section id="system" class="system section-dark section-pad">
-      <div class="section-intro reveal"><p class="eyebrow">01 / The system</p><h2>One connected<br><em>growth engine.</em></h2><p>We do not bolt channels onto a brand. We design the architecture first, then make every touchpoint reinforce the next.</p></div>
-      <div class="system-orbit" aria-hidden="true"><div class="orbit-core"><span>DP</span></div><div class="orbit-ring ring-1"></div><div class="orbit-ring ring-2"></div><div class="orbit-ring ring-3"></div><div class="orbit-node node-1">PAID</div><div class="orbit-node node-2">SOCIAL</div><div class="orbit-node node-3">WEB</div><div class="orbit-node node-4">STRATEGY</div></div>
-      <div class="signal-strip reveal"><span>POSITIONING</span><i></i><span>CREATIVE</span><i></i><span>DISTRIBUTION</span><i></i><span>MEASUREMENT</span><i></i><span>ITERATION</span></div>
-    </section>
-    <section id="services" class="services section-dark section-pad">
-      <div class="section-intro split-intro reveal"><div><p class="eyebrow">02 / Services</p><h2>Choose a pillar.<br><em>Build the system.</em></h2></div><p>Each service is a destination in its own right. Start with the constraint you have now; we can connect the rest as the business grows.</p></div>
-      <div class="service-grid">
-        <a class="service-card reveal" href="#service-performance"><span class="service-num">01</span><span class="service-kicker">Performance</span><h3>Paid social that earns its place.</h3><p>Meta and paid social campaigns built around clean tracking, disciplined testing and accountable growth.</p><span class="service-arrow">Explore pillar ↗</span></a>
-        <a class="service-card reveal" href="#service-presence"><span class="service-num">02</span><span class="service-kicker">Social presence</span><h3>A brand that stays switched on.</h3><p>Content, community and creator partnerships that keep the brand visible, useful and recognisable.</p><span class="service-arrow">Explore pillar ↗</span></a>
-        <a class="service-card reveal" href="#service-web"><span class="service-num">03</span><span class="service-kicker">Web experiences</span><h3>Digital spaces with a point of view.</h3><p>High-performance websites and landing experiences that turn attention into clear next steps.</p><span class="service-arrow">Explore pillar ↗</span></a>
-        <a class="service-card reveal" href="#service-strategy"><span class="service-num">04</span><span class="service-kicker">Strategy & consulting</span><h3>The plan behind the motion.</h3><p>Positioning, market thinking, growth roadmaps and senior-level decisions tied to measurable outcomes.</p><span class="service-arrow">Explore pillar ↗</span></a>
+
+    <section id="system" class="scene-section system-section" data-mode="system">
+      <div class="section-inner section-inner-wide">
+        <div class="ui-panel section-panel reveal">
+          <div class="panel-kicker"><span>DP / 02</span><span>SYSTEM MAP</span></div>
+          <span class="object-label">ONE ENGINE / FOUR MODULES</span>
+          <h2>Every touchpoint<br><em>feeds the next.</em></h2>
+          <p>The core is the brand. Around it, four operating modules create a loop: attract attention, build belief, convert intent, then learn from the signal.</p>
+          <div class="module-legend">
+            <span><i></i> PERFORMANCE</span><span><i></i> PRESENCE</span><span><i></i> WEB</span><span><i></i> STRATEGY</span>
+          </div>
+        </div>
+        <div class="floating-ui loop-card reveal">
+          <div class="mini-head"><span>FEEDBACK LOOP</span><span>01—04</span></div>
+          <div class="loop-list"><div><b>01</b><span>ATTRACT</span><i></i></div><div><b>02</b><span>BUILD</span><i></i></div><div><b>03</b><span>CONVERT</span><i></i></div><div><b>04</b><span>LEARN</span><i></i></div></div>
+        </div>
+        <div class="floating-ui architecture-card reveal">
+          <div class="mini-head"><span>ARCHITECTURE</span><span>4.0</span></div>
+          <div class="arch-bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <div class="mini-foot"><span>CONNECTED STATES</span><strong>18</strong></div>
+        </div>
       </div>
     </section>
-    <section class="service-destinations section-dark">
-      <article id="service-performance" class="destination"><div class="destination-visual"><div class="radar"></div><div class="data-float">ROAS <strong>4.82×</strong></div><div class="data-float two">CPA <strong>-31%</strong></div></div><div class="destination-copy reveal"><p class="eyebrow">Pillar 01 / Performance</p><h2>Paid social<br><em>with a feedback loop.</em></h2><p>We build and manage Meta and paid social campaigns from offer to reporting. Creative is tested as a system, audiences are structured deliberately, and every decision is tied back to the commercial outcome.</p><ul><li>Full-funnel campaign architecture</li><li>Creative testing and iteration</li><li>Tracking, attribution and reporting</li><li>Weekly optimisation against agreed KPIs</li></ul><a class="button" href="#contact">Build a performance plan ↗</a></div></article>
-      <article id="service-presence" class="destination"><div class="destination-copy reveal"><p class="eyebrow">Pillar 02 / Presence</p><h2>Social that<br><em>compounds.</em></h2><p>Your feed should not depend on bursts of inspiration. We create a repeatable content and community system with a voice people recognise and creator partnerships that fit the audience.</p><ul><li>Content strategy and monthly calendars</li><li>Copy, creative direction and publishing</li><li>Community and comment management</li><li>Creator sourcing, outreach and partnerships</li></ul><a class="button" href="#contact">Build a presence system ↗</a></div><div class="destination-visual social-visual"><div class="social-stack"><span>CONTENT / 08</span><b>+24.6%</b><i></i><small>ENGAGEMENT VELOCITY</small></div></div></article>
-      <article id="service-web" class="destination"><div class="destination-visual web-visual"><div class="browser"><div class="browser-top"><i></i><i></i><i></i><span>digitalpillars.co</span></div><div class="browser-body"><b>MAKE THE<br>FIRST MOVE.</b><span></span></div></div></div><div class="destination-copy reveal"><p class="eyebrow">Pillar 03 / Web</p><h2>Websites that<br><em>move people.</em></h2><p>We design and build fast, conversion-minded websites that carry the same visual language as the brand. Motion is purposeful, responsive behaviour is deliberate, and the code stays maintainable.</p><ul><li>Art direction, UX and responsive design</li><li>Modern front-end builds</li><li>Landing pages and campaign destinations</li><li>Performance, accessibility and analytics foundations</li></ul><a class="button" href="#contact">Plan a web build ↗</a></div></article>
-      <article id="service-strategy" class="destination"><div class="destination-copy reveal"><p class="eyebrow">Pillar 04 / Strategy</p><h2>Clarity before<br><em>more activity.</em></h2><p>When growth feels scattered, we step back. We map the market, sharpen the positioning, define the priorities and turn them into a roadmap the team can actually operate.</p><ul><li>Positioning and offer architecture</li><li>Market and channel analysis</li><li>Quarter-by-quarter growth roadmaps</li><li>Senior advisory and decision support</li></ul><a class="button" href="#contact">Start a strategy sprint ↗</a></div><div class="destination-visual strategy-visual"><div class="strategy-grid"><span>01</span><span>02</span><span>03</span><span>04</span><b>FOCUS</b></div></div></article>
+
+    <section id="pillars" class="scene-section pillars-section" data-mode="modules">
+      <div class="section-inner section-inner-wide">
+        <div class="ui-panel section-panel reveal">
+          <div class="panel-kicker"><span>DP / 03</span><span>SELECT MODULE</span></div>
+          <span class="object-label">SERVICE CONTROL</span>
+          <h2>Choose the constraint.<br><em>Deploy the pillar.</em></h2>
+          <p>Each service is a self-contained operating module. Hover for depth, click to route the core, then enter the destination panel.</p>
+        </div>
+
+        <div class="module-stack">
+          <a class="module-card tilt-card reveal active" href="#performance" data-module="performance">
+            <span class="module-index">01</span><div class="module-icon icon-target"><i></i><i></i><i></i></div>
+            <div><small>PERFORMANCE</small><h3>Paid social<br>campaigns</h3><p>Testing, tracking and media built around commercial signal.</p></div><span class="module-arrow">↗</span>
+          </a>
+          <a class="module-card tilt-card reveal" href="#presence" data-module="presence">
+            <span class="module-index">02</span><div class="module-icon icon-pulse"><i></i><i></i><i></i></div>
+            <div><small>PRESENCE</small><h3>Social media<br>systems</h3><p>Content, creators and community designed to compound.</p></div><span class="module-arrow">↗</span>
+          </a>
+          <a class="module-card tilt-card reveal" href="#web" data-module="web">
+            <span class="module-index">03</span><div class="module-icon icon-frame"><i></i><i></i><i></i></div>
+            <div><small>WEB</small><h3>Web experiences<br>that convert</h3><p>Fast, responsive digital spaces with a point of view.</p></div><span class="module-arrow">↗</span>
+          </a>
+          <a class="module-card tilt-card reveal" href="#strategy" data-module="strategy">
+            <span class="module-index">04</span><div class="module-icon icon-lattice"><i></i><i></i><i></i></div>
+            <div><small>STRATEGY</small><h3>Clarity before<br>more activity</h3><p>Positioning, roadmap and senior decision support.</p></div><span class="module-arrow">↗</span>
+          </a>
+        </div>
+
+        <div class="floating-ui module-readout reveal">
+          <div class="mini-head"><span>MODULE TELEMETRY</span><span id="moduleCode">P-01</span></div>
+          <div class="readout-main"><strong id="moduleMetric">+38.4%</strong><span id="moduleMetricLabel">CAMPAIGN LIFT</span></div>
+          <div class="readout-line"><i id="moduleBar"></i></div>
+          <div class="mini-foot"><span id="moduleState">OPTIMISATION ACTIVE</span><strong id="moduleStateValue">92%</strong></div>
+        </div>
+      </div>
     </section>
-    <section id="proof" class="proof section-dark section-pad">
-      <div class="section-intro reveal"><p class="eyebrow">03 / Proof</p><h2>Quietly<br><em>obsessive.</em></h2><p>Good digital work should feel considered from every angle. The numbers matter; so does the way the experience carries the brand.</p></div>
-      <div class="metrics"><div class="metric reveal"><span>AVG. CAMPAIGN LIFT</span><strong>+38.4%</strong><small>illustrative studio benchmark</small></div><div class="metric reveal"><span>REPORTING RHYTHM</span><strong>7D</strong><small>weekly decision cadence</small></div><div class="metric reveal"><span>CORE EXPERIENCE</span><strong>60FPS</strong><small>motion built around transforms</small></div></div>
-      <div class="testimonials reveal"><article class="quote"><span>“</span><p>Digital Pillars brought structure to a marketing setup that had become impossible to reason about. We finally had a clear view of what to do next.</p><footer><b>Founder</b><span>Consumer brand · UK</span></footer></article><article class="quote"><span>“</span><p>The difference was not more activity. It was better decisions. The creative, landing page and paid strategy started working like one system.</p><footer><b>Growth lead</b><span>Technology · Europe</span></footer></article><article class="quote"><span>“</span><p>Every touchpoint felt intentional, from the first ad through to the site. The work gave the team something much more valuable than a new campaign: a framework.</p><footer><b>Managing director</b><span>Services · UK</span></footer></article></div>
+
+    <section id="performance" class="scene-section detail-section" data-mode="performance">
+      <div class="detail-grid">
+        <div class="ui-panel detail-copy reveal">
+          <div class="panel-kicker"><span>MODULE 01</span><span>PERFORMANCE</span></div>
+          <span class="object-label">META / PAID SOCIAL</span>
+          <h2>Media with a<br><em>feedback loop.</em></h2>
+          <p>Campaign architecture, creative testing, tracking and weekly optimisation connected to the commercial outcome.</p>
+          <div class="spec-grid"><span>CAMPAIGN DESIGN</span><b>FULL FUNNEL</b><span>CREATIVE TESTS</span><b>LIVE</b><span>REPORTING</span><b>7D</b><span>ATTRIBUTION</span><b>SYNCED</b></div>
+          <a class="solid-button magnetic" href="#contact">Deploy performance <span>↗</span></a>
+        </div>
+        <div class="floating-ui telemetry-panel reveal">
+          <div class="mini-head"><span>CAMPAIGN TELEMETRY</span><span>LIVE</span></div>
+          <div class="big-number">4.82<span>×</span></div><small>ROAS</small>
+          <div class="chart-large"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <div class="telemetry-foot"><span>CPA <b>-31%</b></span><span>CTR <b>+18%</b></span><span>CVR <b>+12%</b></span></div>
+        </div>
+      </div>
     </section>
-    <section id="contact" class="contact section-dark section-pad">
-      <div class="contact-visual" aria-hidden="true"><div class="contact-orb"></div><div class="contact-line l1"></div><div class="contact-line l2"></div><div class="contact-line l3"></div></div>
-      <div class="contact-copy reveal"><p class="eyebrow">04 / Client inquiry</p><h2>Make the next<br><em>move deliberate.</em></h2><p>Tell us where the business is now, what is not working, and what you want the system to do next. We will come back with the clearest route forward.</p></div>
-      <form id="contactForm" class="contact-form reveal" novalidate><label>Name<input name="name" autocomplete="name" required></label><label>Email<input name="email" type="email" autocomplete="email" required></label><label>Company<input name="company" autocomplete="organization"></label><label>What are you building?<textarea name="message" rows="3" required></textarea></label><button class="button magnetic" type="submit">Send inquiry <span>↗</span></button><p id="formMessage" class="form-message" role="status"></p></form>
+
+    <section id="presence" class="scene-section detail-section" data-mode="presence">
+      <div class="detail-grid reverse">
+        <div class="floating-ui social-board reveal">
+          <div class="mini-head"><span>CONTENT SYSTEM</span><span>08 / 24</span></div>
+          <div class="social-cards"><div><b>REEL</b><span>1.8M</span></div><div><b>CAROUSEL</b><span>428K</span></div><div><b>CREATOR</b><span>92K</span></div><div><b>COMMUNITY</b><span>+24%</span></div></div>
+          <div class="social-wave"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        </div>
+        <div class="ui-panel detail-copy reveal">
+          <div class="panel-kicker"><span>MODULE 02</span><span>PRESENCE</span></div>
+          <span class="object-label">SOCIAL MEDIA</span>
+          <h2>Presence that<br><em>compounds.</em></h2>
+          <p>Content strategy, creative direction, publishing, community and creator partnerships built as a repeatable operating system.</p>
+          <div class="spec-grid"><span>CONTENT</span><b>WEEKLY</b><span>CREATORS</span><b>CURATED</b><span>COMMUNITY</span><b>ACTIVE</b><span>VOICE</span><b>CONSISTENT</b></div>
+          <a class="solid-button magnetic" href="#contact">Deploy presence <span>↗</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section id="web" class="scene-section detail-section" data-mode="web">
+      <div class="detail-grid">
+        <div class="ui-panel detail-copy reveal">
+          <div class="panel-kicker"><span>MODULE 03</span><span>WEB</span></div>
+          <span class="object-label">WEB EXPERIENCES</span>
+          <h2>Interfaces that<br><em>move people.</em></h2>
+          <p>Art direction, UX, responsive engineering, analytics foundations and motion designed to make the next action obvious.</p>
+          <div class="spec-grid"><span>PERFORMANCE</span><b>60FPS TARGET</b><span>ACCESSIBILITY</span><b>AA FOUNDATION</b><span>RESPONSIVE</span><b>FLUID</b><span>ANALYTICS</span><b>WIRED</b></div>
+          <a class="solid-button magnetic" href="#contact">Deploy web <span>↗</span></a>
+        </div>
+        <div class="floating-ui browser-board reveal">
+          <div class="browser-chrome"><span></span><span></span><span></span><b>digitalpillars / build</b></div>
+          <div class="browser-viewport"><div class="browser-orb"></div><div class="browser-lines"><i></i><i></i><i></i></div><div class="browser-button">ENTER SYSTEM ↗</div></div>
+          <div class="browser-metrics"><span><b>98</b> PERF</span><span><b>100</b> A11Y</span><span><b>96</b> SEO</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="strategy" class="scene-section detail-section" data-mode="strategy">
+      <div class="detail-grid reverse">
+        <div class="floating-ui strategy-board reveal">
+          <div class="mini-head"><span>ROADMAP</span><span>Q1 → Q4</span></div>
+          <div class="roadmap"><div><b>01</b><span>POSITION</span><i></i></div><div><b>02</b><span>ACTIVATE</span><i></i></div><div><b>03</b><span>SCALE</span><i></i></div><div><b>04</b><span>LEARN</span><i></i></div></div>
+          <div class="strategy-score"><strong>87</strong><span>CLARITY INDEX</span></div>
+        </div>
+        <div class="ui-panel detail-copy reveal">
+          <div class="panel-kicker"><span>MODULE 04</span><span>STRATEGY</span></div>
+          <span class="object-label">STRATEGY / CONSULTING</span>
+          <h2>Clarity before<br><em>more activity.</em></h2>
+          <p>Positioning, offer architecture, market thinking and growth roadmaps for teams that need fewer random acts of marketing.</p>
+          <div class="spec-grid"><span>POSITIONING</span><b>SHARPENED</b><span>CHANNELS</span><b>PRIORITISED</b><span>ROADMAP</span><b>90D</b><span>ADVISORY</span><b>DIRECT</b></div>
+          <a class="solid-button magnetic" href="#contact">Deploy strategy <span>↗</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section id="proof" class="scene-section proof-section" data-mode="proof">
+      <div class="section-inner section-inner-wide">
+        <div class="ui-panel section-panel reveal">
+          <div class="panel-kicker"><span>DP / 04</span><span>SIGNAL LOG</span></div>
+          <span class="object-label">PROOF / SIGNAL / EXPERIENCE</span>
+          <h2>Quietly obsessive.<br><em>Visible in the system.</em></h2>
+          <p>Performance is the output. The interface is the evidence: clear decisions, clean instrumentation and work that behaves like one connected machine.</p>
+        </div>
+        <div class="proof-grid">
+          <div class="floating-ui proof-card reveal"><small>AVG. CAMPAIGN LIFT</small><strong>+38.4%</strong><span>illustrative benchmark</span></div>
+          <div class="floating-ui proof-card reveal"><small>REPORTING RHYTHM</small><strong>7D</strong><span>decision cadence</span></div>
+          <div class="floating-ui proof-card reveal"><small>CORE EXPERIENCE</small><strong>60FPS</strong><span>transform-led motion</span></div>
+        </div>
+        <div class="review-rail reveal">
+          <article class="review-card"><span>01</span><p>“The work gave the team a clearer operating system, not another disconnected campaign.”</p><footer><b>Founder</b><span>Consumer brand / UK</span></footer></article>
+          <article class="review-card"><span>02</span><p>“Creative, landing pages and paid strategy finally started behaving like one system.”</p><footer><b>Growth lead</b><span>Technology / Europe</span></footer></article>
+          <article class="review-card"><span>03</span><p>“Every touchpoint felt intentional, from the first ad through to the final conversion.”</p><footer><b>Managing director</b><span>Services / UK</span></footer></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="scene-section contact-section" data-mode="contact">
+      <div class="contact-shell ui-panel reveal">
+        <div class="panel-kicker"><span>DP / 05</span><span>TRANSMISSION CHANNEL</span></div>
+        <span class="object-label">START A SYSTEM</span>
+        <h2>Make the next<br><em>move deliberate.</em></h2>
+        <p>Send the constraint, the ambition and the current system. We will map the clearest next module.</p>
+        <form id="contactForm" novalidate>
+          <div class="form-row"><label>NAME<input name="name" autocomplete="name" required></label><label>EMAIL<input name="email" type="email" autocomplete="email" required></label></div>
+          <label>COMPANY<input name="company" autocomplete="organization"></label>
+          <label>WHAT ARE YOU BUILDING?<textarea name="message" rows="3" required></textarea></label>
+          <div class="form-submit"><button class="solid-button magnetic" type="submit">Transmit brief <span>↗</span></button><span id="formMessage" role="status"></span></div>
+        </form>
+      </div>
     </section>
   </main>
-  <footer class="footer"><span>Digital Pillars</span><span>Growth, engineered.</span><span>hello@digitalpillars.co</span></footer>
-  <button id="aiButton" class="ai-button magnetic" type="button" aria-expanded="false" aria-controls="aiPanel"><span class="ai-orb"></span><span>Ask DP</span></button>
-  <aside id="aiPanel" class="ai-panel" hidden><div class="ai-head"><div><span class="eyebrow">DP / Quick answers</span><h2>Where should we start?</h2></div><button id="aiClose" aria-label="Close assistant">×</button></div><div id="aiQuestions" class="ai-questions"><button data-answer="We work across four connected pillars: paid social performance, social presence, web experiences, and strategy & consulting. Each can stand alone or become part of one growth system.">What services do you offer?</button><button data-answer="Start with a short inquiry. Tell us what you are building, what is currently getting in the way, and the outcome you need. We will reply with the clearest next step.">How do I get started?</button><button data-answer="Turnaround depends on scope. Strategy sprints can begin quickly; larger web, content or paid-media systems are planned around a clear launch sequence rather than an arbitrary date.">What is your typical turnaround?</button><button data-answer="Yes. We can plug into an existing team or own a defined workstream end to end. The first step is identifying the gap in the current system.">Can you work with our team?</button></div><div id="aiAnswer" class="ai-answer">Select a question above.</div></aside>
-  <script src="https://cdn.jsdelivr.net/npm/three@0.161.0/build/three.min.js"></script><script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script><script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/bundled/lenis.min.js"></script><script src="script.js"></script>
+
+  <footer class="footer-shell glass-ui"><span>DP / DIGITAL PILLARS</span><span>SYSTEMS FOR DIGITAL GROWTH</span><span>HELLO@DIGITALPILLARS.CO</span></footer>
+
+  <button id="aiButton" class="ai-button magnetic" type="button" aria-expanded="false" aria-controls="aiPanel"><span class="ai-orb"><i></i></span><span>DP / ASSIST</span></button>
+  <aside id="aiPanel" class="ai-panel glass-ui" hidden>
+    <div class="ai-head"><div><span class="object-label">DP / ASSIST</span><h2>Inspect a question.</h2></div><button id="aiClose" type="button" aria-label="Close assistant">×</button></div>
+    <div id="aiQuestions" class="ai-questions">
+      <button data-answer="Four modules: paid social performance, social presence, web experiences and strategy. They can deploy independently or as one connected system.">What does Digital Pillars build?</button>
+      <button data-answer="Send a brief with the current constraint, the desired outcome and the system you already have. We will map the next module.">How do I start?</button>
+      <button data-answer="Scope determines the launch sequence. Strategy can move quickly; larger media, content and web systems are staged around a clear build plan.">What is the process?</button>
+      <button data-answer="Yes. Digital Pillars can own a workstream or plug into an existing team, depending on where the current system has the biggest gap.">Can you work with our team?</button>
+    </div>
+    <div id="aiAnswer" class="ai-answer">Select a module above.</div>
+  </aside>
+
+  <script src="https://cdn.jsdelivr.net/npm/three@0.161.0/build/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/bundled/lenis.min.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
