@@ -29,3 +29,11 @@ A production-oriented rebuild inspired by the supplied reference video: one cine
 - JavaScript syntax check: passed with node --check script.js.
 - MP4: H.264, 640×360, 20 fps, 4 seconds.
 - Lighthouse and real-device 60 fps / 4G timings still need to be run in the final hosting environment.
+
+
+## Cinematic interaction layer
+- `styles-motion.css` adds full-screen scene snapping, floating-card motion and cinematic navigation chrome.
+- `motion-engine.js` converts wheel/trackpad gestures and touch swipes into one-scene-at-a-time transitions.
+- UI cards continuously drift with GPU-friendly translate/rotate properties and pause for interaction.
+- The existing WebGL renderer now contains four autonomous orbital drones plus lightweight wireframe shards, so the background behaves like a living 3D system instead of a static backdrop.
+- The pager is disabled for `prefers-reduced-motion`; touch layouts remain responsive rather than forcing desktop-sized scenes.
