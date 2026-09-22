@@ -147,6 +147,24 @@
       drone.userData={angle:a,radius:r,depth:drone.position.z,phase:i*1.7,speed:.18+i*.025};
       ambientObjects.add(drone);
     }
+    // Larger cinematic satellites make the 3D layer unmistakable while staying lightweight.
+    const satelliteMat = new THREE.MeshStandardMaterial({color:0x183b68,metalness:.88,roughness:.12,emissive:0x1c4e9a,emissiveIntensity:.72,transparent:true,opacity:.92});
+    for(let i=0;i<3;i++){
+      const sat=new THREE.Group();
+      const body=new THREE.Mesh(new THREE.OctahedronGeometry(.38+i*.05,1),satelliteMat.clone());
+      body.rotation.set(.35,.2,.55); sat.add(body);
+      const outer=new THREE.Mesh(new THREE.TorusGeometry(.58+i*.07,.012,8,64),new THREE.MeshBasicMaterial({color:i===1?violet:cyan,transparent:true,opacity:.62,blending:THREE.AdditiveBlending}));
+      outer.rotation.x=Math.PI/2; sat.add(outer);
+      const inner=new THREE.Mesh(new THREE.TorusGeometry(.32+i*.04,.006,6,48),new THREE.MeshBasicMaterial({color:blue,transparent:true,opacity:.45,blending:THREE.AdditiveBlending}));
+      inner.rotation.y=Math.PI/3; sat.add(inner);
+      const glow=new THREE.Mesh(new THREE.SphereGeometry(.055,8,8),new THREE.MeshBasicMaterial({color:0xffffff,transparent:true,opacity:.9,blending:THREE.AdditiveBlending}));
+      glow.position.z=.38; sat.add(glow);
+      const a=i/3*Math.PI*2+.9, r=3.35+i*.65;
+      sat.position.set(Math.cos(a)*r,Math.sin(a)*r*.42,(i-1)*1.15);
+      sat.userData={angle:a,radius:r,depth:sat.position.z,phase:2.4+i,speed:.12+i*.018,satellite:true};
+      ambientObjects.add(sat);
+    }
+
     const shardGeo = new THREE.IcosahedronGeometry(.12,0);
     for(let i=0;i<16;i++){
       const shard=new THREE.Mesh(shardGeo,new THREE.MeshBasicMaterial({color:i%3?blue:violet,transparent:true,opacity:.28,wireframe:true,blending:THREE.AdditiveBlending}));
@@ -244,6 +262,15 @@
     document.querySelectorAll('.scene-section').forEach(s=>setMode(s.dataset.mode));
   }
 
+  window.addEventListener('dp:scene', e => {
+    if(!ambientObjects || reduce) return;
+    const mode=e.detail?.mode||'core';
+    const turns={core:0,system:.35,modules:-.55,performance:.9,presence:-.8,web:.25,strategy:-.4,proof:.55,contact:-.7};
+    const turn=turns[mode]||0;
+    gsap?.to?.(ambientObjects.rotation,{y:turn,duration:1.1,ease:'power3.out'});
+    const s=(mode==='performance'||mode==='strategy')?1.14:1;
+    gsap?.to?.(ambientObjects.scale,{x:s,y:s,z:s,duration:.9,ease:'power3.out'});
+  });
   setMode('core');
   document.querySelectorAll('.module-card').forEach(card=>card.addEventListener('mouseenter',()=>setMode(card.dataset.module)));
   document.querySelectorAll('.module-card').forEach(card=>card.addEventListener('click',()=>setMode(card.dataset.module)));
