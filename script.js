@@ -244,7 +244,7 @@
     document.querySelectorAll('.module-card').forEach(c=>c.classList.toggle('active',c.dataset.module===mode));
   }
 
-  if(window.gsap && window.ScrollTrigger && !reduce){
+  if(window.gsap && window.ScrollTrigger && !reduce && !document.body.dataset.movie){
     gsap.registerPlugin(ScrollTrigger);
     const lenis=window.Lenis?new Lenis({duration:1.05,smoothWheel:true,syncTouch:false}):null;
     if(lenis){window.DPLenis=lenis;const tick=t=>{lenis.raf(t*1000);requestAnimationFrame(tick)};requestAnimationFrame(tick);lenis.on('scroll',ScrollTrigger.update);}
