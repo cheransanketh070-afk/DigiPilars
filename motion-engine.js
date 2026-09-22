@@ -102,26 +102,26 @@
   }, {threshold:[.55,.75,.9]});
   sections.forEach(s => observer.observe(s));
 
-  const floaters = document.querySelectorAll('.floating-ui,.module-card,.review-card');
-  floaters.forEach((el, i) => {
+  // Continuous micro-motion for cards. One RAF loop keeps the whole UI on a single compositor clock.
+  const floaters = [...document.querySelectorAll('.floating-ui,.module-card,.review-card')].map((el,i) => ({
+    el, amp:3 + (i % 4) * 1.5, speed:.00065 + (i % 5) * .00011, phase:i * 1.17
+  }));
+  floaters.forEach(({el}) => {
     el.classList.add('motion-controlled');
-    const amp = 3 + (i % 4) * 1.5;
-    const speed = 0.00065 + (i % 5) * 0.00011;
-    const phase = i * 1.17;
-    const tick = t => {
-      if (!el.isConnected) return;
-      if (!el.matches(':hover') && !el.classList.contains('tilt-active')) {
-        const y = Math.sin(t * speed + phase) * amp;
-        const r = Math.sin(t * speed * .72 + phase) * 0.42;
-        el.style.translate = `0 ${y.toFixed(2)}px`;
-        el.style.rotate = `${r.toFixed(2)}deg`;
-      }
-      requestAnimationFrame(tick);
-    };
-    requestAnimationFrame(tick);
     el.addEventListener('pointerenter', () => el.classList.add('tilt-active'), {passive:true});
     el.addEventListener('pointerleave', () => el.classList.remove('tilt-active'), {passive:true});
   });
+  const floatLoop = t => {
+    for (const item of floaters) {
+      const {el,amp,speed,phase}=item;
+      if (!el.matches(':hover') && !el.classList.contains('tilt-active')) {
+        el.style.translate = `0 ${(Math.sin(t*speed+phase)*amp).toFixed(2)}px`;
+        el.style.rotate = `${(Math.sin(t*speed*.72+phase)*.42).toFixed(2)}deg`;
+      }
+    }
+    requestAnimationFrame(floatLoop);
+  };
+  requestAnimationFrame(floatLoop);
 
   const fine = window.matchMedia('(pointer:fine)').matches;
   const stage = document.querySelector('.webgl-stage');
