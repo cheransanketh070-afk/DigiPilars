@@ -53,7 +53,7 @@
     lastSceneChange = performance.now();
     root.classList.add('is-jumping');
     setActive(next);
-    sections[next].scrollIntoView({behavior:'smooth', block:'start'});
+    if (window.DPLenis) window.DPLenis.scrollTo(sections[next], {duration:.82, lock:true, force:true}); else sections[next].scrollIntoView({behavior:'smooth', block:'start'});
     window.setTimeout(() => { locked = false; root.classList.remove('is-jumping'); }, 820);
   };
 
