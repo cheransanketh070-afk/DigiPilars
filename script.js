@@ -26,7 +26,7 @@
   }
 
   const canvas = document.querySelector('#hero3d');
-  let renderer, scene, camera, rig, core, rings, particles, pulse, raf;
+  let renderer, scene, camera, rig, core, rings, particles, pulse, raf, ambientObjects;
   const pointer = {x:0,y:0,tx:0,ty:0};
   const modeState = { value:'core' };
   const blue = 0x79b9ff;
@@ -130,6 +130,32 @@
       const a=i/5*Math.PI*2; s.position.set(Math.cos(a)*2.7,(Math.sin(a)*2.7)*.48,.3+Math.sin(a)*.6); pulse.add(s);
     }
 
+    // Secondary orbital hardware: lightweight autonomous objects keep the scene alive
+    // without adding another WebGL context. They drift on separate depth planes.
+    ambientObjects = new THREE.Group(); scene.add(ambientObjects);
+    const droneMat = new THREE.MeshStandardMaterial({color:0x315b91,metalness:.8,roughness:.16,emissive:0x173d75,emissiveIntensity:.65,transparent:true,opacity:.82});
+    const glowMat = new THREE.MeshBasicMaterial({color:cyan,transparent:true,opacity:.72,blending:THREE.AdditiveBlending});
+    for(let i=0;i<4;i++){
+      const drone = new THREE.Group();
+      const shell = new THREE.Mesh(new THREE.OctahedronGeometry(.24 + i*.035,0), droneMat.clone());
+      shell.rotation.z=.4; drone.add(shell);
+      const ring = new THREE.Mesh(new THREE.TorusGeometry(.34+i*.02,.008,6,40), new THREE.MeshBasicMaterial({color:i%2?violet:cyan,transparent:true,opacity:.45,blending:THREE.AdditiveBlending}));
+      ring.rotation.x=Math.PI/2; drone.add(ring);
+      const eye = new THREE.Mesh(new THREE.SphereGeometry(.035,8,8),glowMat); eye.position.z=.23; drone.add(eye);
+      const a=i/4*Math.PI*2+.5, r=4.1+i*.35;
+      drone.position.set(Math.cos(a)*r,(Math.sin(a)*r)*.52,(i-1.5)*.9);
+      drone.userData={angle:a,radius:r,depth:drone.position.z,phase:i*1.7,speed:.18+i*.025};
+      ambientObjects.add(drone);
+    }
+    const shardGeo = new THREE.IcosahedronGeometry(.12,0);
+    for(let i=0;i<16;i++){
+      const shard=new THREE.Mesh(shardGeo,new THREE.MeshBasicMaterial({color:i%3?blue:violet,transparent:true,opacity:.28,wireframe:true,blending:THREE.AdditiveBlending}));
+      const a=Math.random()*Math.PI*2, r=3.2+Math.random()*3.4;
+      shard.position.set(Math.cos(a)*r,(Math.sin(a)*r)*.55,(Math.random()-.5)*4.5);
+      shard.userData={phase:Math.random()*Math.PI*2,baseY:shard.position.y,spin:.002+Math.random()*.003};
+      ambientObjects.add(shard);
+    }
+
     const resize=()=>{const w=canvas.clientWidth,h=canvas.clientHeight;renderer.setSize(w,h,false);camera.aspect=w/h;camera.updateProjectionMatrix();};
     resize(); window.addEventListener('resize',resize,{passive:true});
     if(finePointer){window.addEventListener('pointermove',e=>{pointer.tx=(e.clientX/innerWidth-.5)*2;pointer.ty=(e.clientY/innerHeight-.5)*2},{passive:true});}
@@ -143,6 +169,23 @@
         rings.rotation.z += .0015; rings.rotation.x=Math.sin(time*.2)*.08;
         particles.rotation.y += .00025; particles.rotation.x=pointer.y*.012;
         pulse.rotation.y -= .004;
+        if(ambientObjects){
+          ambientObjects.rotation.y += .00018;
+          ambientObjects.children.forEach((o,idx)=>{
+            const u=o.userData;
+            if(u.angle){
+              const a=u.angle + time*u.speed;
+              o.position.x=Math.cos(a)*u.radius;
+              o.position.y=Math.sin(a)*u.radius*.52 + Math.sin(time*.7+u.phase)*.18;
+              o.position.z=u.depth + Math.sin(time*.55+u.phase)*.35;
+              o.rotation.y += .004 + idx*.00025;
+              o.rotation.x += .0018;
+            } else {
+              o.position.y=u.baseY + Math.sin(time*.55+u.phase)*.28;
+              o.rotation.x += u.spin; o.rotation.y += u.spin*.7;
+            }
+          });
+        }
         core.children.forEach((o,idx)=>{if(o.isGroup && idx<5)o.position.y += Math.sin(time*1.1+idx)*.00045;});
       }
       const scroll=window.scrollY/(Math.max(1,document.body.scrollHeight-innerHeight));
