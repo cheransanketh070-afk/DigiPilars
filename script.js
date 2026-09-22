@@ -229,7 +229,7 @@
   if(window.gsap && window.ScrollTrigger && !reduce){
     gsap.registerPlugin(ScrollTrigger);
     const lenis=window.Lenis?new Lenis({duration:1.05,smoothWheel:true,syncTouch:false}):null;
-    if(lenis){const tick=t=>{lenis.raf(t*1000);requestAnimationFrame(tick)};requestAnimationFrame(tick);lenis.on('scroll',ScrollTrigger.update);}
+    if(lenis){window.DPLenis=lenis;const tick=t=>{lenis.raf(t*1000);requestAnimationFrame(tick)};requestAnimationFrame(tick);lenis.on('scroll',ScrollTrigger.update);}
     gsap.to('.scroll-progress span',{width:'100%',ease:'none',scrollTrigger:{start:'top top',end:'bottom bottom',scrub:true}});
     gsap.utils.toArray('.reveal').forEach((el,i)=>gsap.fromTo(el,{y:34,opacity:0},{y:0,opacity:1,duration:.9,delay:(i%4)*.04,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 88%',once:true}}));
     gsap.fromTo('.hero-panel',{x:-40,opacity:0},{x:0,opacity:1,duration:1.05,delay:.12,ease:'power3.out'});
